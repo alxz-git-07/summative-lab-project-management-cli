@@ -1,0 +1,13 @@
+{
+    "users": {
+        "alice@example.com": {
+            "name": "Alice Mwangi",
+            "email": "alice@example.com"
+        }
+    },
+    "projects": {},
+    "user_projects": {
+        "alice@example.com": []
+    },
+    "project_tasks": {}
+}

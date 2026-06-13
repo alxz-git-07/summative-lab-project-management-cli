@@ -88,12 +88,27 @@ def view_projects(args):
         print(f'Assigned user {args.user_email} not found')
         return
     
-    projects=db['user_projects'][args.user_email]
+    projects=db['projects']
     if not projects:
         print(f'No projects found inside user {args.user_email}')
         return
-    for project in projects:
-        print(f'title:{project['title']} Description:{project['description']} Due-date:{project['due_date']}')
+    table_rows = []
+
+    
+    for title, info in db['projects'].items():
+        assigned_user = next(
+            (user_email for user_email, titles_list in db['user_projects'].items() if title in titles_list), 
+            "Unassigned"
+        )
+        
+    
+        table_rows.append([title, info['description'], info['due_date'], assigned_user])
+
+    
+    headers = ["Project Title", "Description", "Due Date", "Assigned To"]
+
+    
+    print(tabulate(table_rows, headers=headers, tablefmt="fancy_grid"))
 
 def add_task(args):
     db=load_db()

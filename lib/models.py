@@ -57,7 +57,7 @@ class Project:
 
 class Task:
     all_tasks={'tasks':[]}
-    def __init__(self, title,completed=False,assigned_to=None):
+    def __init__(self, title,assigned_to,completed=False,):
         self.title=title
         self.completed=completed
         self.assigned_to=assigned_to

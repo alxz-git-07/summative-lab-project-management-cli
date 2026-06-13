@@ -5,9 +5,25 @@
             "email": "alice@example.com"
         }
     },
-    "projects": {},
-    "user_projects": {
-        "alice@example.com": []
+    "projects": {
+        "E-Commerce App": {
+            "title": "E-Commerce App",
+            "description": "Build standard online storefront",
+            "due_date": "2026-12-31"
+        }
     },
-    "project_tasks": {}
+    "user_projects": {
+        "alice@example.com": [
+            "E-Commerce App"
+        ]
+    },
+    "project_tasks": {
+        "E-Commerce App": [
+            {
+                "title": "Design DB Schema",
+                "completed": false,
+                "assigned_to": "alice@example.com"
+            }
+        ]
+    }
 }
